@@ -81,12 +81,11 @@ pub fn run_notification_worker(
                                     failed_since_last_success: 0,
                                 });
                             // Ignore if we're in the debounce period
-                            if let Some(debounce) = notification.debounce {
-                                if let Some(last_sent) = status.last_sent {
-                                    if last_sent.elapsed() < debounce {
-                                        continue;
-                                    }
-                                }
+                            if let Some(debounce) = notification.debounce
+                                && let Some(last_sent) = status.last_sent
+                                && last_sent.elapsed() < debounce
+                            {
+                                continue;
                             }
                             status.message = notification.message;
                             status.needs_sending = true;

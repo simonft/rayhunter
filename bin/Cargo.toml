@@ -2,6 +2,7 @@
 name = "rayhunter-daemon"
 version = "0.4.0"
 edition = "2024"
+rust-version = "1.88"
 
 [features]
 # These feature flags are mutually exclusive, and exactly one must be enabled.

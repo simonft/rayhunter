@@ -18,7 +18,7 @@ use std::sync::atomic::{AtomicBool, Ordering};
 use crate::config::{parse_args, parse_config};
 use crate::diag::run_diag_read_thread;
 use crate::error::RayhunterError;
-use crate::notifications::{run_notification_worker, NotificationService};
+use crate::notifications::{NotificationService, run_notification_worker};
 use crate::pcap::get_pcap;
 use crate::qmdl_store::RecordingStore;
 use crate::server::{ServerState, get_config, get_qmdl, get_zip, serve_static, set_config};
